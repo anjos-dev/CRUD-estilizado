@@ -1,0 +1,221 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --bg-body: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --danger: #ef4444;
+    --success: #10b981;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: -50px auto 40px; /* Sobe os cards para cima do header */
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Form de um lado, tabela do outro */
+    gap: 25px;
+}
+
+/* Header com Imagem de Fundo */
+.main-header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(37, 99, 235, 0.8)), 
+                url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 80px 20px 120px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.main-header h1 span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+/* Cards */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fcfcfc;
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.card-header i {
+    color: var(--primary);
+}
+
+/* Formulário */
+.styled-form {
+    padding: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* Tabela */
+.table-responsive {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    padding: 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 2px solid #f1f5f9;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+}
+
+.font-bold { font-weight: 600; }
+
+.badge-id {
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Ações */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-edit { color: var(--primary); background: #eff6ff; }
+.btn-delete { color: var(--danger); background: #fef2f2; }
+
+.btn-edit:hover { background: var(--primary); color: var(--white); }
+.btn-delete:hover { background: var(--danger); color: var(--white); }
+
+.table-footer {
+    padding: 15px 20px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+/* Estilização da coluna de data */
+.col-timestamp {
+    white-space: nowrap; /* Impede que a data quebre em duas linhas */
+}
+
+.date-wrapper {
+    display: flex;
+    flex-direction: column; /* Coloca a hora embaixo da data */
+    gap: 2px;
+}
+
+.main-date {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.time-label {
+    font-size: 0.75rem;
+    color: var(--primary); /* Usa o azul para dar destaque técnico à hora */
+    font-family: 'Courier New', Courier, monospace; /* Dá um ar de "sistema" */
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin-top: -30px;
+    }
+}
